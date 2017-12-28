@@ -1,7 +1,7 @@
 {
   "name": "get-repository-url",
   "description": "Get the GitHub repository URL from a NPM package name.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/jonschlinkert/get-repository-url",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
