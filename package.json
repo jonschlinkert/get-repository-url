@@ -4,16 +4,19 @@
   "version": "0.1.1",
   "homepage": "https://github.com/jonschlinkert/get-repository-url",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Fabian Iwand (https://twitter.com/mootari)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)"
+  ],
   "repository": "jonschlinkert/get-repository-url",
   "bugs": {
     "url": "https://github.com/jonschlinkert/get-repository-url/issues"
   },
   "license": "MIT",
   "files": [
+    "bin",
     "bin/cli.js",
-    "index.js",
-    "LICENSE",
-    "README.md"
+    "index.js"
   ],
   "main": "index.js",
   "bin": "bin/cli.js",

@@ -1,8 +1,8 @@
 /*!
  * get-repository-url <https://github.com/jonschlinkert/get-repository-url>
  *
- * Copyright (c) 2016, Jon Schlinkert.
- * Licensed under the MIT License.
+ * Copyright (c) 2016-2017, Jon Schlinkert.
+ * Released under the MIT License.
  */
 
 'use strict';
