@@ -12,6 +12,11 @@ var parse = require('parse-github-url');
 var pkg = require('get-pkg');
 
 module.exports = function(name, cb) {
+  if (typeof name !== 'string' || name === '') {
+    cb(new TypeError('expected repository name to be a non-empty string'));
+    return;
+  }
+
   pkg(name, function(err, pkg) {
     if (err) return cb(err);
     cb(null, repository(pkg));

@@ -32,7 +32,7 @@ describe('repository URL', function() {
   it('should handle empty strings', function(cb) {
     repositoryURL('', function(err, url) {
       assert(err);
-      assert.equal(err.message, 'Internal Server Error');
+      assert(/expected/.test(err.message));
       cb();
     });
   });
