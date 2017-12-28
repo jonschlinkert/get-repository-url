@@ -45,4 +45,12 @@ describe('repository URL', function() {
       cb();
     });
   });
+
+  it('should handle promises', function() {
+    return repositoryURL('@cycle/core')
+      .then(function(url) {
+        assert(url);
+        assert.equal(url, 'https://github.com/cyclejs/core');
+      });
+  });
 });

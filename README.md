@@ -23,6 +23,18 @@ repositoryUrl('generate', function(err, url) {
 });
 ```
 
+**Promise**
+
+If no callback is passed, a promise will be returned:
+
+```js
+repositoryURL('generate')
+  .then(function(url) {
+    console.log(url);
+    //=> 'https://github.com/generate/generate'
+  });
+```
+
 ## About
 
 <details>
