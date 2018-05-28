@@ -15,7 +15,7 @@ const isString = val => val !== '' && typeof val === 'string';
 
 function getRepsitoryUrl(name, cb) {
   if (typeof cb !== 'function') {
-    return getRepsitoryUrl.promise(name);
+    return util.promisify(getRepsitoryUrl)(name);
   }
 
   if (!isString(name)) {
@@ -31,8 +31,6 @@ function getRepsitoryUrl(name, cb) {
     cb(null, repository(pkg));
   });
 };
-
-getRepsitoryUrl.promise = util.promisify(getRepsitoryUrl);
 
 function repository(pkg) {
   if (!isObject(pkg)) {
