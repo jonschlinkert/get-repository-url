@@ -1,7 +1,7 @@
 {
   "name": "get-repository-url",
   "description": "Get the GitHub repository URL from a NPM package name.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://github.com/jonschlinkert/get-repository-url",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "contributors": [
@@ -21,19 +21,18 @@
   "main": "index.js",
   "bin": "bin/cli.js",
   "engines": {
-    "node": ">=5"
+    "node": ">=4"
   },
   "scripts": {
     "test": "mocha"
   },
   "dependencies": {
-    "get-pkg": "^0.3.0",
-    "isobject": "^2.1.0",
-    "parse-github-url": "^0.3.1"
+    "get-pkg": "^1.0.0",
+    "parse-github-url": "^1.0.2"
   },
   "devDependencies": {
-    "gulp-format-md": "^0.1.9",
-    "mocha": "^2.5.3"
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^5.2.0"
   },
   "keywords": [
     "get",
