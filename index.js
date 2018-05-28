@@ -1,15 +1,17 @@
 /*!
  * get-repository-url <https://github.com/jonschlinkert/get-repository-url>
  *
- * Copyright (c) 2016-2017, Jon Schlinkert.
+ * Copyright (c) 2016-present, Jon Schlinkert.
  * Released under the MIT License.
  */
 
 'use strict';
 
-const isObject = require('isobject');
+const util = require('util');
 const parse = require('parse-github-url');
 const pkg = require('get-pkg');
+const isObject = val => val !== null && typeof val === 'object';
+const isString = val => val !== '' && typeof val === 'string';
 
 function getRepsitoryUrl(name, cb) {
   if (typeof cb !== 'function') {
@@ -30,17 +32,7 @@ function getRepsitoryUrl(name, cb) {
   });
 };
 
-getRepsitoryUrl.promise = function(name) {
-  return new Promise(function(resolve, reject) {
-    getRepsitoryUrl(name, function(err, url) {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(url);
-      }
-    });
-  });
-};
+getRepsitoryUrl.promise = util.promisify(getRepsitoryUrl);
 
 function repository(pkg) {
   if (!isObject(pkg)) {
@@ -51,6 +43,7 @@ function repository(pkg) {
   if (isObject(url)) {
     url = url.url;
   }
+
   if (!isString(url)) {
     return null;
   }
@@ -58,12 +51,9 @@ function repository(pkg) {
   if (/github\.com/.test(url) && /\/issues$/.test(url)) {
     return url.replace(/\/issues$/, '');
   }
+
   const parsed = parse(url);
   return `https://github.com/${parsed.repository}`;
-}
-
-function isString(val) {
-  return val && typeof val === 'string';
 }
 
 module.exports = getRepsitoryUrl;
